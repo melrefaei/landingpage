@@ -94,6 +94,17 @@ const sectionActivation = () => {
 
 window.addEventListener('scroll' ,sectionActivation);
 
+// adding Scrollintoview to smooth scrolling to the section
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 // Scroll to anchor ID using scrollTO event
 
 
